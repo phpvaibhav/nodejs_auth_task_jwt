@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "54805ca8-3aba-4072-b889-fd8163078a21",
+		"name": "NodejsCrud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32613823"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Test User\",\r\n    \"email\":\"test@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"password_confrim\":\"123456\",\r\n    \"contact_number\":1234554332,\r\n    \"tc\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/apiv1/user/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apiv1",
+						"user",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"vs@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/apiv1/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apiv1",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NWI2Nzg0MDUyMGRjMTk2YjMyZDY1NWYiLCJpYXQiOjE3MDY0NjAwNjYsImV4cCI6MTcwNjg5MjA2Nn0.Y-lPobpl9BmYmp81jksEezgXFjNLe0AROqXzhMMJeOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/apiv1/user/loggeduser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apiv1",
+						"user",
+						"loggeduser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Paaword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NWI2Nzg0MDUyMGRjMTk2YjMyZDY1NWYiLCJpYXQiOjE3MDY0NjAwNjYsImV4cCI6MTcwNjg5MjA2Nn0.Y-lPobpl9BmYmp81jksEezgXFjNLe0AROqXzhMMJeOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"123456\",\r\n    \"password_confirm\":\"2344242\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/apiv1/user/changepassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apiv1",
+						"user",
+						"changepassword"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
